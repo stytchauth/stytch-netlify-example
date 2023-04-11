@@ -21,7 +21,16 @@ const Login = () => {
     },
   };
 
-  const REDIRECT_URL = `${window.location.origin}/authenticate`;
+  const getDomainFromWindow = () => {
+    // First, check if this function is being called on the frontend. If so, get domain from window.
+    if (typeof window !== 'undefined') {
+      return window.location.origin;
+    }
+
+    return null;
+  };
+  const REDIRECT_URL = getDomainFromWindow() + '/authenticate';
+
 
   const config = {
     products: [Products.emailMagicLinks, Products.oauth],
