@@ -21,7 +21,7 @@ const Login = () => {
     },
   };
 
-  const REDIRECT_URL = "http://localhost:8888/authenticate";
+  const REDIRECT_URL = `${window.location.origin}/authenticate`;
 
   const config = {
     products: [Products.emailMagicLinks, Products.oauth],
