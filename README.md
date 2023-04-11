@@ -6,7 +6,7 @@
 
 ## Overview
 
-This example application demonstrates how one may use Stytch within a Next.js application. This project was bootstrapped with [Create Next App](https://nextjs.org/docs/api-reference/create-next-app).
+This example application demonstrates how one may use Stytch within a Next.js application running on [Netlify](https://www.netlify.com/integrations/stytch/).
 
 This project uses Stytch's [Next.js SDK](https://stytch.com/docs/sdks/javascript-sdk) which provides pre-built UI components, useful React hooks, headless methods to securely interact with Stytch, and is SSR friendly. This project also utilizes Stytch's [Node Backend SDK](https://www.npmjs.com/package/stytch) for authenticating the logged in user's session.  
 
@@ -24,20 +24,8 @@ Follow the steps below to get this application fully functional and running usin
 
    - Click **Enable SDK**.
    - Under **Authorized environments** add the domain `http://localhost:8888`.
-     
-     <img width="400" alt="Authorized environments" src="https://user-images.githubusercontent.com/100632220/217052985-2e6fc264-7b8b-452b-9d24-66a76c143d10.png">
-
-   - Within the **Email Magic Links** drawer, toggle on **Enable the LoginOrCreate Flow**.
-     
-     <img width="400" alt="SDK Email Magic Links" src="https://user-images.githubusercontent.com/100632220/217053215-8c369de8-7828-4ad6-ac88-a50918520fc3.png">
-
-   - Toggle on **OAuth**.
-     
-     <img width="400" alt="SDK OAuth" src="https://user-images.githubusercontent.com/100632220/217053483-e757d1aa-af18-4af3-a476-45860ca3065f.png">
 
 3. Navigate to [Redirect URLs](https://stytch.com/dashboard/redirect-urls), and add `http://localhost:8888/authenticate` as the types **Login** and **Sign-up**.
-   
-   <img width="400" alt="Redirect URLs" src="https://user-images.githubusercontent.com/100632220/217983021-d8bf6fff-6a68-4e94-bffd-d062e69c8817.png">
 
 4. Navigate to [OAuth](https://stytch.com/dashboard/oauth), and set up login for Google in the Test environment. Follow all the instructions provided in the Dashboard. If you are not interested in OAuth login you can skip this step. However, the _Continue with Google_ button in this application will not work.
    
@@ -45,8 +33,7 @@ Follow the steps below to get this application fully functional and running usin
 
 5. Finally, navigate to [API Keys](https://stytch.com/dashboard/api-keys). You will need the `project_id`, `secret`, and `public_token` values found on this page later on.
 
-### On your machine
-
+### Running the app
 In your terminal clone the project and install dependencies:
 
 ```bash
@@ -55,7 +42,7 @@ cd stytch-netlify-example
 npm i
 ```
 
-Next, create `.env.local` file by running the command below which copies the contents of `.env.template`.
+Next, create `.env.local` file by running the command below which copies the contents of `.env.template`. If you'd like to run the app via Netlify instead of locally, you can skip this step and head straight to the [Running the app on Netlify](#running-the-app-on-netlify) section.
 ```bash
 cp .env.template .env.local
 ```
@@ -70,9 +57,15 @@ NEXT_PUBLIC_STYTCH_PUBLIC_TOKEN=public-token-test-abcd123-0000-0000-abcd-1234567
 STYTCH_SECRET=secret-test-12345678901234567890abcdabcd
 ```
 
-## Running locally
+## Running the app on Netlify
+Click the button below to deploy this application to Netlify. Note, you'll need to set the environment variables in `/netlify.toml`. 
 
-After completing all the set up steps above the application can be run with the command:
+This will create a new Netlify site and deploy the application to it. You will be prompted to connect your Stytch account to Netlify.
+
+[![Deploy to Netlify](https://www.netlify.com/img/deploy/button.svg)](https://app.netlify.com/start/deploy?repository=https://github.com/stytchauth/stytch-netlify-example)
+
+## Running the app locally
+If you want to run the app locally, the app may be run with the command:
 
 ```bash
 netlify dev
