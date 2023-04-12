@@ -58,9 +58,7 @@ STYTCH_SECRET=secret-test-12345678901234567890abcdabcd
 ```
 
 ## Running the app on Netlify
-Click the button below to deploy this application to Netlify. Note, you'll need to set the environment variables in `/netlify.toml`. 
-
-This will create a new Netlify site and deploy the application to it. You will be prompted to connect your Stytch account to Netlify.
+Click the button below to deploy this application to Netlify. This will create a new Netlify site and deploy the application to it. You will be prompted to enter your Stytch [API Keys](https://stytch.com/dashboard/api-keys). Note, you'll need to set the appropriate Redirect URLs and OAuth configuration in the Stytch Dashboard with your Netlify site's domain, see [In the Stytch Dashboard](#in-the-stytch-dashboard) for more details.
 
 [![Deploy to Netlify](https://www.netlify.com/img/deploy/button.svg)](https://app.netlify.com/start/deploy?repository=https://github.com/stytchauth/stytch-netlify-example)
 
