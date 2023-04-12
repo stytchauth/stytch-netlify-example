@@ -20,10 +20,10 @@ Follow the steps below to get this application fully functional and running usin
 
 1. Create a [Stytch](https://stytch.com/) account. Once your account is set up a Project called "My first project" will be automatically created for you.
 
-2. Within your new Project, navigate to [SDK configuration](https://stytch.com/dashboard/sdk-configuration), and make the following changes:
+2. Within your new Project, navigate to [Frontend SDKs](https://stytch.com/dashboard/sdk-configuration), and make the following changes:
 
    - Click **Enable SDK**.
-   - Under **Authorized environments** add the domain `http://localhost:8888`.
+   - Under **Authorized applications** add the domain `http://localhost:8888`.
 
 3. Navigate to [Redirect URLs](https://stytch.com/dashboard/redirect-urls), and add `http://localhost:8888/authenticate` as the types **Login** and **Sign-up**.
 
@@ -40,6 +40,7 @@ In your terminal clone the project and install dependencies:
 git clone https://github.com/stytchauth/stytch-netlify-example
 cd stytch-netlify-example
 npm i
+npm install netlify-cli -g
 ```
 
 Next, create `.env.local` file by running the command below which copies the contents of `.env.template`. If you'd like to run the app via Netlify instead of locally, you can skip this step and head straight to the [Running the app on Netlify](#running-the-app-on-netlify) section.
@@ -58,7 +59,9 @@ STYTCH_SECRET=secret-test-12345678901234567890abcdabcd
 ```
 
 ## Running the app on Netlify
-Click the button below to deploy this application to Netlify. This will create a new Netlify site and deploy the application to it. You will be prompted to enter your Stytch [API Keys](https://stytch.com/dashboard/api-keys). Note, you'll need to set the appropriate Redirect URLs and OAuth configuration in the Stytch Dashboard with your Netlify site's domain, see [In the Stytch Dashboard](#in-the-stytch-dashboard) for more details.
+Click the button below to deploy this application to Netlify. This will create a new Netlify site and deploy the application to it. You will be prompted to enter your Stytch [API Keys](https://stytch.com/dashboard/api-keys). 
+
+Note, you'll need to add your Netlify's site domain to the [Redirect URLs](https://stytch.com/dashboard/redirect-urls), e.g. `https://main--wonderful-salmiakki-f95458.netlify.app/authenticate`, and [Authorized applications](https://stytch.com/dashboard/sdk-configuration) in your Stytch Dashboard, e.g. `https://main--wonderful-salmiakki-f95458.netlify.app`. 
 
 [![Deploy to Netlify](https://www.netlify.com/img/deploy/button.svg)](https://app.netlify.com/start/deploy?repository=https://github.com/stytchauth/stytch-netlify-example)
 
