@@ -61,7 +61,7 @@ STYTCH_SECRET=secret-test-12345678901234567890abcdabcd
 ## Running the app on Netlify
 Click the button below to deploy this application to Netlify. This will create a new Netlify site and deploy the application to it. You will be prompted to enter your Stytch [API Keys](https://stytch.com/dashboard/api-keys). 
 
-Note, you'll need to add the appropriate Redirect URLs and OAuth configuration in the Stytch Dashboard with your Netlify site's domain. Copy the URL from your Netlify app and add it to the two [Redirect URLs](https://stytch.com/dashboard/redirect-urls) and the [Authorized applications](https://stytch.com/dashboard/sdk-configuration) mentioned in the section above, [In the Stytch Dashboard](#in-the-stytch-dashboard).
+Note, you'll need to add your Netlify's site domain to the [Redirect URLs](https://stytch.com/dashboard/redirect-urls) and [Authorized applications](https://stytch.com/dashboard/sdk-configuration) in your Stytch Dashboard that you previously added `http://localhost:8888` to. 
 
 [![Deploy to Netlify](https://www.netlify.com/img/deploy/button.svg)](https://app.netlify.com/start/deploy?repository=https://github.com/stytchauth/stytch-netlify-example)
 
